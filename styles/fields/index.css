@@ -4,7 +4,7 @@ input, textarea, select {
     appearance: none;
     border-radius: .5rem;
     border: 1px solid var(--stroke-default);
-    width: 33rem;
+    width: 100%;
 
     padding: .75rem 1rem;
 
@@ -48,4 +48,30 @@ input[type="date"] {
 
 select {
     background: url(../../assets/icons/arrow-down-01.svg) no-repeat calc(100% - 1rem);
+}
+
+.address .flex {
+    gap: 1.25rem;
+
+    & input[type="number"] {
+
+        &::-webkit-inner-spin-button {
+            display: none;
+        }
+    }
+}
+
+.input-wrapper:has([disabled]) {
+    opacity: .5;
+}
+
+input {
+    &[disabled] {
+        background-color: var(--surface-disabled);
+        cursor: not-allowed;
+
+        border: 1px solid var(--stroke-default);
+
+        color: var(--text-primary);
+    }
 }
